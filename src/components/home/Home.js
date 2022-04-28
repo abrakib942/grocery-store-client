@@ -1,8 +1,12 @@
 import React from "react";
-import Menubar from "../menubar/Menubar";
+import Banner from "../banner/Banner";
 
 const Home = () => {
-  return <div></div>;
+  return (
+    <div>
+      <Banner />
+    </div>
+  );
 };
 
 export default Home;
