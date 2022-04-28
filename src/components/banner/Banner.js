@@ -3,7 +3,7 @@ import banner from "../../images/banner.jpg";
 
 const Banner = () => {
   return (
-    <div className="container d-flex align-items-center text-center">
+    <div className="container d-flex align-items-center text-center banner">
       <div>
         <h2>BERRIES FROM OUR BACKYARD</h2>
         <p>
@@ -12,7 +12,7 @@ const Banner = () => {
         </p>
       </div>
       <div>
-        <img className="w-50 ms-5" src={banner} alt="" />
+        <img className="w-50 ms-5 bannerImg" src={banner} alt="" />
       </div>
     </div>
   );

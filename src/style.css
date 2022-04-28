@@ -1,3 +1,15 @@
 .logo {
   width: 100px;
 }
+
+/* responsive */
+@media (max-width: 576px) {
+  .banner {
+    margin-top: 40px;
+    display: flex;
+    flex-direction: column;
+  }
+  .bannerImg {
+    width: 90% !important;
+  }
+}
