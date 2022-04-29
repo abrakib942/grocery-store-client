@@ -56,6 +56,46 @@
   background-color: #c3babd;
 }
 
+/* special */
+
+.banner img {
+  width: 100%;
+}
+
+.banner {
+  position: relative;
+}
+
+.title {
+  position: absolute;
+  top: 50px;
+  right: 20px;
+  color: orangered;
+  font-family: monospace;
+  text-align: center;
+}
+
+.text {
+  position: absolute;
+  bottom: 200px;
+  right: 100px;
+}
+
+.spBtn {
+  position: absolute;
+  bottom: 150px;
+  right: 200px;
+
+  background-color: orangered;
+  border: 1px solid white;
+  border-radius: 20px;
+  padding: 10px;
+  color: white;
+}
+.spBtn:hover {
+  background-color: tomato;
+}
+
 /* responsive */
 @media (max-width: 576px) {
   .banner {

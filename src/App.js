@@ -22,7 +22,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/inventories" element={<Inventories />}></Route>
+        <Route path="/inventory" element={<Inventories />}></Route>
       </Routes>
 
       <ToastContainer />

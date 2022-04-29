@@ -17,7 +17,7 @@ const Menubar = () => {
     <div>
       <Navbar collapseOnSelect expand="lg" bg="light" variant="light">
         <Container>
-          <Navbar.Brand href="#home">
+          <Navbar.Brand as={Link} to="/" href="#home">
             <img className="logo" src={logo} alt="" />
           </Navbar.Brand>
           <Navbar.Toggle aria-controls="responsive-navbar-nav" />
@@ -32,13 +32,24 @@ const Menubar = () => {
             </Nav>
             <Nav>
               {user ? (
-                <Link
-                  to="/"
-                  className="btn btn-link text-decoration-none text-dark"
-                  onClick={handleLogOut}
-                >
-                  Log out
-                </Link>
+                <>
+                  <Nav.Link as={Link} to="/manage">
+                    Manage Items
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/add">
+                    Add Item
+                  </Nav.Link>
+                  <Nav.Link as={Link} to="/manage">
+                    My Items
+                  </Nav.Link>
+                  <Link
+                    to="/"
+                    className="btn btn-link text-decoration-none text-dark"
+                    onClick={handleLogOut}
+                  >
+                    Log out
+                  </Link>
+                </>
               ) : (
                 <>
                   <Nav.Link as={Link} to="/login">

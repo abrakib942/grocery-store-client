@@ -4,7 +4,7 @@ const useInventory = () => {
   const [inventories, setInventories] = useState([]);
 
   useEffect(() => {
-    fetch("fake.json")
+    fetch("https://stormy-crag-58273.herokuapp.com/inventory")
       .then((res) => res.json())
       .then((data) => setInventories(data));
   }, []);
