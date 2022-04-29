@@ -8,12 +8,19 @@ const Inventory = ({ inventory }) => {
       <Card style={{ width: "18rem" }}>
         <Card.Img variant="top" src={img} />
         <Card.Body>
-          <Card.Title> {name} </Card.Title>
-          <Card.Text>{description}</Card.Text>
-          <p>৳{price}</p>
-          <p>{quantity}</p>
-          <Card.Text>{supplier}</Card.Text>
+          <Card.Title>
+            {" "}
+            <h3>{name}</h3>{" "}
+          </Card.Title>
+          <Card.Text>
+            {" "}
+            <small>{description}</small>{" "}
+          </Card.Text>
+          <h3 className="text-danger mb-3">৳{price}</h3>
+          <h6>Quantity: {quantity}</h6>
+          <Card.Text> Supplier: {supplier}</Card.Text>
         </Card.Body>
+        <button className="btn btn-info text-white">Stock update</button>
       </Card>
     </div>
   );

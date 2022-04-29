@@ -5,7 +5,7 @@ const Banner = () => {
   return (
     <div className="container d-flex align-items-center text-center banner">
       <div>
-        <h2>BERRIES FROM OUR BACKYARD</h2>
+        <h2>Grocery store with different treasures </h2>
         <p>
           We grow berries together with some dedicated growers and pack them for
           you. Straight from the field.

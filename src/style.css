@@ -2,6 +2,60 @@
   width: 100px;
 }
 
+/* login and log out */
+
+.form-container {
+  width: 600px;
+  margin: 0 auto;
+  border: 1px solid #95a0a7;
+  background-color: lightblue;
+  box-sizing: border-box;
+  border-radius: 8px;
+  display: flex;
+  justify-content: center;
+}
+.form-title {
+  font-size: 35px;
+  color: #2a414f;
+  font-weight: 400;
+}
+.input-group {
+  margin-bottom: 20px;
+}
+.input-group label {
+  display: block;
+  margin-left: 5px;
+}
+.input-group input {
+  width: 415px;
+  height: 55px;
+  border: 1px solid #95a0a7;
+  box-sizing: border-box;
+  border-radius: 5px;
+  font-size: 18px;
+  padding: 10px;
+}
+.form-submit {
+  width: 415px;
+  height: 55px;
+  background-color: burlywood;
+  border-radius: 5px;
+  border: none;
+  font-size: 20px;
+  cursor: pointer;
+}
+.form-submit:hover {
+  background-color: rgba(255, 0, 13, 0.471);
+}
+.form-link {
+  color: #ff9900;
+  text-decoration: none;
+}
+
+.loginForm {
+  background-color: #c3babd;
+}
+
 /* responsive */
 @media (max-width: 576px) {
   .banner {
