@@ -1,4 +1,5 @@
 import React from "react";
+import { Link } from "react-router-dom";
 import useInventory from "../../hooks/useInventory";
 import Banner from "../banner/Banner";
 import Footer from "../footer/Footer";
@@ -20,7 +21,9 @@ const Home = () => {
           ))}
         </div>
         <div className="text-center">
-          <button className="btn btn-danger  my-5">Manage Inventories</button>
+          <Link to="/inventories" className="btn btn-danger  my-5">
+            Manage Inventories
+          </Link>
         </div>
       </div>
       <Footer />

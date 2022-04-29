@@ -9,6 +9,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { ToastContainer } from "react-toastify";
 import Login from "./components/login/Login";
 import SignUp from "./components/signUp/SignUp";
+import Inventories from "./components/inventories/Inventories";
 
 function App() {
   return (
@@ -21,6 +22,7 @@ function App() {
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
+        <Route path="/inventories" element={<Inventories />}></Route>
       </Routes>
 
       <ToastContainer />
