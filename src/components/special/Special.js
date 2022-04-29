@@ -3,7 +3,7 @@ import slider from "../../images/slider.png";
 
 const Special = () => {
   return (
-    <div className="container mb-5">
+    <div className=" mb-5">
       <div className="banner">
         <img src={slider} alt="" />
         <h2 className="title">

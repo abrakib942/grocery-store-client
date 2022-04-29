@@ -6,6 +6,7 @@ import Footer from "../footer/Footer";
 
 import Inventory from "../inventory/Inventory";
 import Special from "../special/Special";
+import SpecialTwo from "../specialTwo/SpecialTwo";
 
 const Home = () => {
   const [inventories, setInventories] = useInventory();
@@ -13,6 +14,8 @@ const Home = () => {
     <div>
       <div className="container">
         <Banner />
+
+        <Special />
 
         <h2 className="text-primary text-center my-5">Inventories</h2>
 
@@ -27,7 +30,8 @@ const Home = () => {
           </Link>
         </div>
       </div>
-      <Special />
+
+      <SpecialTwo />
 
       <Footer />
     </div>
