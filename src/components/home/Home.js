@@ -25,7 +25,7 @@ const Home = () => {
           ))}
         </div>
         <div className="text-center">
-          <Link to="/inventory" className="btn btn-danger  my-5">
+          <Link to="/manage" className="btn btn-danger  my-5">
             Manage Inventories
           </Link>
         </div>

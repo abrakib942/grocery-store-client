@@ -39,7 +39,7 @@ const Menubar = () => {
                   <Nav.Link as={Link} to="/add">
                     Add Item
                   </Nav.Link>
-                  <Nav.Link as={Link} to="/manage">
+                  <Nav.Link as={Link} to="/myItem">
                     My Items
                   </Nav.Link>
                   <Link

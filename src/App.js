@@ -10,6 +10,11 @@ import { ToastContainer } from "react-toastify";
 import Login from "./components/login/Login";
 import SignUp from "./components/signUp/SignUp";
 import Inventories from "./components/inventories/Inventories";
+import AddItem from "./components/addItem/AddItem";
+import ManageItem from "./components/manageItem/ManageItem";
+import MyItem from "./components/myItem/MyItem";
+import PrivateRoute from "./components/privateRoute/PrivateRoute";
+import InventoryDetails from "./components/inventoryDetails/InventoryDetails";
 
 function App() {
   return (
@@ -22,7 +27,25 @@ function App() {
         <Route path="/blogs" element={<Blogs />}></Route>
         <Route path="/login" element={<Login />}></Route>
         <Route path="/signup" element={<SignUp />}></Route>
-        <Route path="/inventory" element={<Inventories />}></Route>
+        <Route
+          path="/manage"
+          element={
+            <PrivateRoute>
+              <Inventories />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route
+          path="/inventory/:id"
+          element={
+            <PrivateRoute>
+              <InventoryDetails />
+            </PrivateRoute>
+          }
+        ></Route>
+        <Route path="/add" element={<AddItem />}></Route>
+        <Route path="/manage" element={<ManageItem />}></Route>
+        <Route path="myItem" element={<MyItem />}></Route>
       </Routes>
 
       <ToastContainer />

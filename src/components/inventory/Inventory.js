@@ -1,8 +1,16 @@
 import React from "react";
 import { Card } from "react-bootstrap";
+import { useNavigate } from "react-router-dom";
 
 const Inventory = ({ inventory }) => {
-  const { name, img, quantity, price, description, supplier } = inventory;
+  const { _id, name, img, quantity, price, description, supplier } = inventory;
+
+  const navigate = useNavigate();
+
+  const navigateToDetails = (id) => {
+    navigate(`/inventory/${id}`);
+  };
+
   return (
     <div>
       <Card style={{ width: "18rem" }}>
@@ -20,7 +28,13 @@ const Inventory = ({ inventory }) => {
           <h6>Quantity: {quantity}</h6>
           <Card.Text> Supplier: {supplier}</Card.Text>
         </Card.Body>
-        <button className="btn btn-info text-white">Stock update</button>
+        <button
+          onClick={() => navigateToDetails(_id)}
+          className="btn btn-success text-white"
+        >
+          Stock update
+        </button>
+        <button className="btn btn-outline-danger ">Delete</button>
       </Card>
     </div>
   );

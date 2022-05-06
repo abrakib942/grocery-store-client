@@ -51,8 +51,12 @@ const Login = () => {
     }
   };
 
+  if (loading) {
+    return <p className="text-center mt-5">Loading...</p>;
+  }
+
   if (user || googleUser) {
-    navigate("/");
+    navigate(from, { replace: true });
   }
 
   let errorElement;
