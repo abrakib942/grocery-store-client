@@ -11,13 +11,17 @@ const InventoryDetails = () => {
     fetch(url)
       .then((res) => res.json())
       .then((data) => setInventory(data));
-  }, []);
+  }, [id]);
 
   const handleDelivered = () => {
-    setInventory({
-      ...inventory,
-      quantity: inventory.quantity - 1,
-    });
+    if (inventory.quantity === 0) {
+      setInventory(...inventory);
+    } else {
+      setInventory({
+        ...inventory,
+        quantity: inventory.quantity - 1,
+      });
+    }
   };
   const restockItem = (event) => {
     event.preventDefault();
@@ -40,9 +44,13 @@ const InventoryDetails = () => {
         <h6> Quantity: {inventory.quantity} </h6>
         <p>Supplier: {inventory.supplier} </p>
 
-        <button onClick={handleDelivered} className="btn-outline-success">
-          Delivered
-        </button>
+        {inventory.quantity === 0 ? (
+          <h6 className="text-danger">Sold out</h6>
+        ) : (
+          <button onClick={handleDelivered} className="btn-outline-success">
+            Delivered
+          </button>
+        )}
       </div>
 
       <div className="mb-5">

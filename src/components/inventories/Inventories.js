@@ -13,11 +13,11 @@ const Inventories = () => {
         {inventories.map((inventory) => (
           <Inventory key={inventory._id} inventory={inventory}></Inventory>
         ))}
-        <div className="mx-auto my-5">
-          <Link to="/add">
-            <button className="btn btn-outline-primary ">Add New Item</button>
-          </Link>
-        </div>
+      </div>
+      <div className=" my-5">
+        <Link to="/add">
+          <button className="btn btn-outline-primary ">Add New Item</button>
+        </Link>
       </div>
     </div>
   );
