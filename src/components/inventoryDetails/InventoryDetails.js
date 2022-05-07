@@ -13,8 +13,21 @@ const InventoryDetails = () => {
       .then((data) => setInventory(data));
   }, []);
 
-  const handleDelivered = () => {};
-  const restockItem = () => {};
+  const handleDelivered = () => {
+    setInventory({
+      ...inventory,
+      quantity: inventory.quantity - 1,
+    });
+  };
+  const restockItem = (event) => {
+    event.preventDefault();
+
+    setInventory({
+      ...inventory,
+      quantity: inventory.quantity + parseInt(event.target[0].value),
+    });
+    event.target.reset();
+  };
 
   return (
     <div className="text-center">
