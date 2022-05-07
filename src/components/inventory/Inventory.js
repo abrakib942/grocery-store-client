@@ -1,14 +1,37 @@
-import React from "react";
+import React, { useState } from "react";
 import { Card } from "react-bootstrap";
 import { useNavigate } from "react-router-dom";
+import useInventory from "../../hooks/useInventory";
 
 const Inventory = ({ inventory }) => {
   const { _id, name, img, quantity, price, description, supplier } = inventory;
+
+  // const [inventories, setInventories] = useState([]);
+  const [inventories, setInventories] = useInventory();
 
   const navigate = useNavigate();
 
   const navigateToDetails = (id) => {
     navigate(`/inventory/${id}`);
+  };
+
+  const handleDelete = (id) => {
+    const proceed = window.confirm("You want to delete. Are you sure?");
+
+    if (proceed) {
+      const url = `https://stormy-crag-58273.herokuapp.com/inventory/${id}`;
+
+      fetch(url, {
+        method: "DELETE",
+      })
+        .then((res) => res.json())
+        .then((data) => {
+          const remaining = inventories.filter(
+            (inventory) => inventory._id !== id
+          );
+          setInventories(remaining);
+        });
+    }
   };
 
   return (
@@ -34,7 +57,12 @@ const Inventory = ({ inventory }) => {
         >
           Stock update
         </button>
-        <button className="btn btn-outline-danger ">Delete</button>
+        <button
+          onClick={() => handleDelete(inventory._id)}
+          className="btn btn-outline-danger "
+        >
+          Delete
+        </button>
       </Card>
     </div>
   );
