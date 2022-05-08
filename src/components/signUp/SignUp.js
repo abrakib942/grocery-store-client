@@ -8,6 +8,7 @@ import {
 import google from "../../images/google.png";
 import auth from "../../firebase.init";
 import logo from "../../images/logo.png";
+import Loading from "../loading/Loading";
 
 const SignUp = () => {
   const [email, setEmail] = useState("");
@@ -49,6 +50,10 @@ const SignUp = () => {
         <p className="text-danger"> {error.message}</p>
       </div>
     );
+  }
+
+  if (loading) {
+    return <Loading />;
   }
 
   if (user || googleUser) {

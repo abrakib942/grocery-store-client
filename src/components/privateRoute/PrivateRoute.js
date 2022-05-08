@@ -2,13 +2,14 @@ import React from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import { Navigate, useLocation } from "react-router-dom";
 import auth from "../../firebase.init";
+import Loading from "../loading/Loading";
 
 const PrivateRoute = ({ children }) => {
   const [user, loading] = useAuthState(auth);
   const location = useLocation();
 
   if (loading) {
-    return <p className="text-center mt-5">Loading...</p>;
+    return <Loading />;
   }
 
   if (!user) {

@@ -12,6 +12,7 @@ import "react-toastify/dist/ReactToastify.css";
 import { toast } from "react-toastify";
 import auth from "../../firebase.init";
 import logo from "../../images/logo.png";
+import Loading from "../loading/Loading";
 
 const Login = () => {
   const [email, setEmail] = useState("");
@@ -52,7 +53,7 @@ const Login = () => {
   };
 
   if (loading) {
-    return <p className="text-center mt-5">Loading...</p>;
+    return <Loading />;
   }
 
   if (user || googleUser) {
