@@ -2,6 +2,8 @@ import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
+import Inventory from "../inventory/Inventory";
+import Item from "../item/Item";
 
 const MyItem = () => {
   const [user] = useAuthState(auth);
@@ -9,7 +11,7 @@ const MyItem = () => {
 
   useEffect(() => {
     const email = user?.email;
-    const url = `http://localhost:5000/myItem?email=${email}`;
+    const url = `https://stormy-crag-58273.herokuapp.com/myitem?email=${email}`;
 
     fetch(url)
       .then((res) => res.json())
@@ -27,8 +29,14 @@ const MyItem = () => {
   // }, [user]);
 
   return (
-    <div>
-      <h2 className="text-center my-5">My Items: {items.length} </h2>
+    <div className="container text-center">
+      <h2 className=" my-5">My Items: {items.length} </h2>
+
+      <div className="row row-cols-lg-3 row-cols-md-2 g-4">
+        {items.map((item) => (
+          <Item key={item._id} item={item}></Item>
+        ))}
+      </div>
     </div>
   );
 };
