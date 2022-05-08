@@ -33,7 +33,8 @@ const InventoryDetails = () => {
     event.preventDefault();
 
     if (event.target.number.value < 1) {
-      setInventory(...inventory);
+      setInventory(inventory);
+      toast("Invalid Input");
     } else {
       setInventory({
         ...inventory,
