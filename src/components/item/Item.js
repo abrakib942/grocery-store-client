@@ -10,7 +10,7 @@ const Item = ({ item }) => {
     const proceed = window.confirm("You want to delete. Are you sure?");
 
     if (proceed) {
-      const url = `https://stormy-crag-58273.herokuapp.com/myitem/${id}`;
+      const url = `http://localhost:5000/myItem/${id}`;
 
       fetch(url, {
         method: "DELETE",

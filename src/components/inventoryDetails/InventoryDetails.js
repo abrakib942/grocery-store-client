@@ -1,5 +1,6 @@
 import React, { useEffect, useState } from "react";
 import { useParams } from "react-router-dom";
+import { toast } from "react-toastify";
 
 const InventoryDetails = () => {
   const { id } = useParams({});
@@ -14,22 +15,32 @@ const InventoryDetails = () => {
   }, [id]);
 
   const handleDelivered = () => {
-    if (inventory.quantity === 0) {
+    // if (inventory.quantity === 0) {
+    //   setInventory(...inventory);
+    // } else {
+    //   setInventory({
+    //     ...inventory,
+    //     quantity: inventory.quantity - 1,
+    //   });
+    // }
+    setInventory({
+      ...inventory,
+      quantity: inventory.quantity - 1,
+    });
+  };
+
+  const restockItem = (event) => {
+    event.preventDefault();
+
+    if (event.target.number.value < 1) {
       setInventory(...inventory);
     } else {
       setInventory({
         ...inventory,
-        quantity: inventory.quantity - 1,
+        quantity: inventory.quantity + parseInt(event.target[0].value),
       });
     }
-  };
-  const restockItem = (event) => {
-    event.preventDefault();
 
-    setInventory({
-      ...inventory,
-      quantity: inventory.quantity + parseInt(event.target[0].value),
-    });
     event.target.reset();
   };
 
@@ -64,7 +75,7 @@ const InventoryDetails = () => {
             required
           />
 
-          <input className="" type="submit" value="Restock" />
+          <input className="btn-success" type="submit" value="Restock" />
         </form>
       </div>
     </div>
