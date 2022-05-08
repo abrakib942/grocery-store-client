@@ -1,7 +1,11 @@
 import React, { useRef } from "react";
+import { useAuthState } from "react-firebase-hooks/auth";
 import { toast } from "react-toastify";
+import auth from "../../firebase.init";
 
 const AddItem = () => {
+  const [user] = useAuthState(auth);
+
   const nameRef = useRef("");
   const desRef = useRef("");
   const priceRef = useRef("");
@@ -13,13 +17,22 @@ const AddItem = () => {
     event.preventDefault();
 
     const name = nameRef.current.value;
+    const email = user.email;
     const description = desRef.current.value;
     const price = priceRef.current.value;
     const quantity = quantityRef.current.value;
     const supplier = suppRef.current.value;
     const img = imgRef.current.value;
 
-    const addItem = { name, description, price, quantity, supplier, img };
+    const addItem = {
+      name,
+      email,
+      description,
+      price,
+      quantity,
+      supplier,
+      img,
+    };
 
     const url = `https://stormy-crag-58273.herokuapp.com/inventory`;
     fetch(url, {
@@ -44,7 +57,7 @@ const AddItem = () => {
       .then((res) => res.json())
       .then((data) => {
         if (data.insertedId) {
-          toast("item added");
+          toast("item added successfully");
         }
       });
 
@@ -62,6 +75,16 @@ const AddItem = () => {
           name="text"
           placeholder="Product name"
           id=""
+          required
+        />
+        <input
+          value={user.email}
+          className="mb-2"
+          type="email"
+          name="email"
+          placeholder="Email"
+          id=""
+          readOnly
           required
         />
         <textarea
