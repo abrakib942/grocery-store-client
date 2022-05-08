@@ -30,6 +30,7 @@ const Inventory = ({ inventory }) => {
             (inventory) => inventory._id !== id
           );
           setInventories(remaining);
+          window.location.reload(false);
         });
     }
   };

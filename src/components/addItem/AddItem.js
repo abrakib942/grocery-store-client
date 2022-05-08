@@ -1,4 +1,5 @@
 import React, { useRef } from "react";
+import { toast } from "react-toastify";
 
 const AddItem = () => {
   const nameRef = useRef("");
@@ -31,6 +32,22 @@ const AddItem = () => {
       .then((res) => res.json())
       .then((data) => console.log(data));
 
+    // for my items
+
+    fetch(`https://stormy-crag-58273.herokuapp.com/myItem`, {
+      method: "POST",
+      headers: {
+        "content-type": "application/json",
+      },
+      body: JSON.stringify(addItem),
+    })
+      .then((res) => res.json())
+      .then((data) => {
+        if (data.insertedId) {
+          toast("item added");
+        }
+      });
+
     event.target.reset();
   };
 
@@ -45,6 +62,7 @@ const AddItem = () => {
           name="text"
           placeholder="Product name"
           id=""
+          required
         />
         <textarea
           ref={desRef}
@@ -53,6 +71,7 @@ const AddItem = () => {
           name="description"
           placeholder="description"
           id=""
+          required
         />
         <input
           ref={priceRef}
@@ -61,6 +80,7 @@ const AddItem = () => {
           name="number"
           placeholder="Price"
           id=""
+          required
         />
         <input
           ref={quantityRef}
@@ -69,6 +89,7 @@ const AddItem = () => {
           name="number"
           placeholder="quantity"
           id=""
+          required
         />
         <input
           ref={suppRef}
@@ -77,6 +98,7 @@ const AddItem = () => {
           name="text"
           placeholder="supplier"
           id=""
+          required
         />
         <input
           ref={imgRef}
