@@ -6,6 +6,7 @@ const AddItem = () => {
   const priceRef = useRef("");
   const quantityRef = useRef("");
   const suppRef = useRef("");
+  const imgRef = useRef("");
 
   const handleAddItem = (event) => {
     event.preventDefault();
@@ -15,8 +16,9 @@ const AddItem = () => {
     const price = priceRef.current.value;
     const quantity = quantityRef.current.value;
     const supplier = suppRef.current.value;
+    const img = imgRef.current.value;
 
-    const addItem = { name, description, price, quantity, supplier };
+    const addItem = { name, description, price, quantity, supplier, img };
 
     const url = `https://stormy-crag-58273.herokuapp.com/inventory`;
     fetch(url, {
@@ -75,6 +77,12 @@ const AddItem = () => {
           name="text"
           placeholder="supplier"
           id=""
+        />
+        <input
+          ref={imgRef}
+          className="mb-2"
+          placeholder="Photo URL"
+          type="text"
         />
         <input className="btn-outline-success" type="submit" value="Add Item" />
       </form>
