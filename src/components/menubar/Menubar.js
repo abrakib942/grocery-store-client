@@ -26,9 +26,6 @@ const Menubar = () => {
               <Nav.Link as={Link} to="/home" href="#features">
                 Home
               </Nav.Link>
-              <Nav.Link as={Link} to="/blogs" href="#pricing">
-                Blogs
-              </Nav.Link>
             </Nav>
             <Nav>
               {user ? (
