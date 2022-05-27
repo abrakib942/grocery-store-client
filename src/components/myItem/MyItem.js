@@ -1,8 +1,7 @@
-import axios from "axios";
 import React, { useEffect, useState } from "react";
 import { useAuthState } from "react-firebase-hooks/auth";
 import auth from "../../firebase.init";
-import Inventory from "../inventory/Inventory";
+
 import Item from "../item/Item";
 
 const MyItem = () => {
