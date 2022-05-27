@@ -17,16 +17,6 @@ const MyItem = () => {
       .then((data) => setItems(data));
   }, [user]);
 
-  // useEffect(() => {
-  //   const email = user?.email;
-  //   const getItems = async () => {
-  //     const url = `http://localhost:5000/myItem?email=${email}`;
-  //     const { data } = await axios.get(url);
-  //     setItems(data);
-  //   };
-  //   getItems();
-  // }, [user]);
-
   return (
     <div className="container text-center">
       <h2 className=" my-5">My Items: {items.length} </h2>

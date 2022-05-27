@@ -15,14 +15,6 @@ const InventoryDetails = () => {
   }, [id]);
 
   const handleDelivered = () => {
-    // if (inventory.quantity === 0) {
-    //   setInventory(...inventory);
-    // } else {
-    //   setInventory({
-    //     ...inventory,
-    //     quantity: inventory.quantity - 1,
-    //   });
-    // }
     setInventory({
       ...inventory,
       quantity: inventory.quantity - 1,
