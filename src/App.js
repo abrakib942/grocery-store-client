@@ -15,8 +15,15 @@ import ManageItem from "./components/manageItem/ManageItem";
 import MyItem from "./components/myItem/MyItem";
 import PrivateRoute from "./components/privateRoute/PrivateRoute";
 import InventoryDetails from "./components/inventoryDetails/InventoryDetails";
+import AOS from "aos";
+import "aos/dist/aos.css";
+import { useEffect } from "react";
 
 function App() {
+  useEffect(() => {
+    AOS.init();
+  }, []);
+
   return (
     <div>
       <Menubar />

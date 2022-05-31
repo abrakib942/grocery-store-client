@@ -35,19 +35,19 @@ const Inventory = ({ inventory }) => {
   };
 
   return (
-    <div>
-      <Card style={{ width: "18rem" }}>
+    <div data-aos="zoom-out-up" data-aos-duration="1000" data-aos-delay="200">
+      <Card style={{ width: "20rem" }}>
         <Card.Img variant="top" src={img} />
         <Card.Body>
           <Card.Title>
             {" "}
-            <h3>{name}</h3>{" "}
+            <h4>{name}</h4>{" "}
           </Card.Title>
           <Card.Text>
             {" "}
             <small>{description}</small>{" "}
           </Card.Text>
-          <h3 className="text-danger mb-3">৳{price}</h3>
+          <h5 className="text-danger mb-3">৳{price}</h5>
           <h6>Quantity: {quantity}</h6>
           <Card.Text> Supplier: {supplier}</Card.Text>
         </Card.Body>

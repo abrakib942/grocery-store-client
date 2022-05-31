@@ -3,7 +3,7 @@ import background from "../../images/background.png";
 
 const SpecialTwo = () => {
   return (
-    <div>
+    <div data-aos="flip-up" data-aos-duration="1000" data-aos-delay="200">
       <div className="subscribe mb-4">
         <img src={background} alt="" />
         <div className="subsForm">
