@@ -58,14 +58,6 @@
 
 /* special */
 
-.banner img {
-  width: 100%;
-}
-
-.banner {
-  position: relative;
-}
-
 .title {
   position: absolute;
   top: 50px;
@@ -82,9 +74,9 @@
 }
 
 .spBtn {
-  position: absolute;
+  /* position: absolute;
   bottom: 150px;
-  right: 200px;
+  right: 200px; */
 
   background-color: orangered;
   border: 1px solid white;
@@ -93,7 +85,7 @@
   color: white;
 }
 .spBtn:hover {
-  background-color: tomato;
+  background-color: #89c74a;
 }
 
 /* special two */
@@ -101,16 +93,16 @@
   width: 100%;
 }
 
-.subscribe {
+/* .subscribe {
   position: relative;
-}
-.subsForm {
+} */
+/* .subsForm {
   position: absolute;
   top: 20%;
   left: 35%;
   font-family: cursive;
   text-align: center;
-}
+} */
 .subsForm input {
   width: 415px;
   height: 55px;
@@ -170,19 +162,16 @@
     right: 20px;
     font-size: 0.7em;
   }
-  .subsForm {
+  /* .subsForm {
     top: 2px;
     left: 50px;
-  }
+  } */
   .subsForm input {
     width: 80%;
     height: 30px;
   }
-  .subBtn {
-    position: absolute;
-    font-size: 12px;
-    top: 35px;
-    right: 10px;
-    height: 35px;
+
+  .banner {
+    font-size: 0.7em;
   }
 }

@@ -14,28 +14,28 @@ const Inventory = ({ inventory }) => {
     navigate(`/inventory/${id}`);
   };
 
-  const handleDelete = (id) => {
-    const proceed = window.confirm("You want to delete. Are you sure?");
+  // const handleDelete = (id) => {
+  //   const proceed = window.confirm("You want to delete. Are you sure?");
 
-    if (proceed) {
-      const url = `https://stormy-crag-58273.herokuapp.com/inventory/${id}`;
+  //   if (proceed) {
+  //     const url = `https://stormy-crag-58273.herokuapp.com/inventory/${id}`;
 
-      fetch(url, {
-        method: "DELETE",
-      })
-        .then((res) => res.json())
-        .then((data) => {
-          const remaining = inventories.filter(
-            (inventory) => inventory._id !== id
-          );
-          setInventories(remaining);
-          window.location.reload(false);
-        });
-    }
-  };
+  //     fetch(url, {
+  //       method: "DELETE",
+  //     })
+  //       .then((res) => res.json())
+  //       .then((data) => {
+  //         const remaining = inventories.filter(
+  //           (inventory) => inventory._id !== id
+  //         );
+  //         setInventories(remaining);
+  //         window.location.reload(false);
+  //       });
+  //   }
+  // };
 
   return (
-    <div data-aos="zoom-out-up" data-aos-duration="1000" data-aos-delay="200">
+    <div data-aos="fade-up" data-aos-duration="1000" data-aos-delay="200">
       <Card style={{ width: "20rem" }}>
         <Card.Img variant="top" src={img} />
         <Card.Body>
@@ -53,16 +53,13 @@ const Inventory = ({ inventory }) => {
         </Card.Body>
         <button
           onClick={() => navigateToDetails(_id)}
-          className="btn btn-success text-white"
+          className="subBtn text-white"
         >
           Stock update
         </button>
-        <button
-          onClick={() => handleDelete(inventory._id)}
-          className="btn btn-outline-danger "
-        >
+        {/* <button onClick={() => handleDelete(inventory._id)} className="spBtn ">
           Delete
-        </button>
+        </button> */}
       </Card>
     </div>
   );
